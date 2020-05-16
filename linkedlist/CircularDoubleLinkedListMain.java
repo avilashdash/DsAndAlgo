@@ -15,9 +15,13 @@ public class CircularDoubleLinkedListMain {
         cdll.deleteFirst();
         cdll.deleteLast();
         cdll.deleteAnywhere(2);
+        cdll.reverseList();
+        System.out.print("\n");
         cdll.printList();
         cdll.printTailValue();
         System.out.print("Size of the List : "+ cdll.sizeOfList());
+        cdll.deleteEntireList();
+        cdll.printList();
 
     }
 }

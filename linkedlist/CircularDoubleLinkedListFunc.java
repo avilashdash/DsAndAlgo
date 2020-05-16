@@ -148,6 +148,32 @@ public class CircularDoubleLinkedListFunc {
 
     }
 
+    public void reverseList(){
+        if(isEmpty()){System.out.println("List is Empty");}
+        else{
+            LinkNode last = tail;
+            while(last.prev != tail){
+                System.out.print("[data : "+ last.nodeValue + " ]"+"-->");
+                last = last.prev;
+            }
+            System.out.print("[data : "+ last.nodeValue + " ]"+"-->");
+        }
+    }
+
+    public void deleteEntireList(){
+        if(isEmpty()){System.out.println("List is Empty");}
+        else{
+            LinkNode current = head;
+            while(current.next != head){
+                current.prev = null;
+                current = current.next;
+            }
+            tail.next = null;
+            head = tail =  null;
+
+        }
+    }
+
     public void searchInList(int data){
         boolean valueFound= false;
         if(isEmpty()){System.out.println("List is Empty");}
