@@ -106,6 +106,68 @@ public class CircularDoubleLinkedListFunc {
 
     }
 
+    public void deleteFirst(){
+        if(isEmpty()){System.out.println("List is Empty. Nothing to delete!!");}
+        else{
+            head = head.next;
+            head.prev = tail;
+            tail.next =head;
+        }
+    }
+
+    public void deleteLast(){
+        if(isEmpty()){System.out.println("List is Empty. Nothing to delete!!");}
+        else{
+            tail = tail.prev;
+            tail.next=head;
+            head.prev = tail;
+        }
+    }
+    public void deleteAnywhere(int location){
+        int size = sizeOfList();
+        if (isEmpty()){System.out.println("List is Empty. Nothing to Delete");}
+        if(location == 0){
+            deleteFirst();
+        }
+        else if (location == size){
+            deleteLast();
+        }
+        else if (location > size){
+            System.out.println("Location value : "+ location+" is greater than "+ "size of the list : "+ size);
+        }
+        else{
+            int i = 0;
+            LinkNode current = head;
+            while(i != location -1){
+                i++;
+                current = current.next;
+            }
+            current.next = current.next.next;
+            current.next.prev = current;
+        }
+
+    }
+
+    public void searchInList(int data){
+        boolean valueFound= false;
+        if(isEmpty()){System.out.println("List is Empty");}
+        else{
+            LinkNode current = head;
+            int i =0;
+            while(current.next != head){
+                if(current.nodeValue == data){
+                    System.out.println("Data : "+data + " is found at node : "+i);
+                    valueFound = true;
+                }
+                i++;
+                current= current.next;
+            }
+        }
+        if(!valueFound){
+            System.out.println(data + " is not available in LIST");
+        }
+    }
+
     public void printList(){
         if(isEmpty()){
             System.out.println("List is Empty!!");

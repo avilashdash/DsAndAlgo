@@ -11,6 +11,11 @@ public class CircularDoubleLinkedListMain {
         cdll.insertLast(9);
         cdll.insertWhere(10,3);
         cdll.printList();
+        System.out.print("\n");
+        cdll.deleteFirst();
+        cdll.deleteLast();
+        cdll.deleteAnywhere(2);
+        cdll.printList();
         cdll.printTailValue();
         System.out.print("Size of the List : "+ cdll.sizeOfList());
 
